@@ -1,5 +1,5 @@
 <x-layout>
-    <div id="url-form">
+    <div id="shorten-url">
         <h1>short url = {{$shortURL}}</h1>
     </div>
 
