@@ -14,7 +14,7 @@ class CreateUrlsTable extends Migration
     public function up()
     {
         Schema::create('urls', function (Blueprint $table) {
-            $table->id();
+            $table->id()->unique();
             $table->string('long_url');
             $table->string('short_url');
             $table->timestamps();
