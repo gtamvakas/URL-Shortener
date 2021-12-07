@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/{url_id}', [UrlController::class, 'redirectToOriginalURL']);
+
 Route::post('/shorten' , [UrlController::class, 'shortenURL']);
