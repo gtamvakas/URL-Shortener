@@ -30,7 +30,7 @@ class UrlController extends Controller
         $shortURL = $request->url_id;
         $originalURL = Url::where('short_url', $baseURL .  $shortURL)->first();
 
-       return redirect()->away('http://'.$originalURL->long_url);
+       return redirect()->away('https://' .$originalURL->long_url);
     }
 
 
