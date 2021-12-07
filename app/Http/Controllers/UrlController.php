@@ -32,7 +32,7 @@ class UrlController extends Controller
         if($originalURL == null){
             return redirect('/')->withErrors(['msg' => 'URL does not exist!']);
         }
-       return redirect()->away('https://' .$originalURL->long_url);
+        return redirect()->away('https://' .$originalURL->long_url);
     }
 
 
