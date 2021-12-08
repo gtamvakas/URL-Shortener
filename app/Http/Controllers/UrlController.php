@@ -23,7 +23,7 @@ class UrlController extends Controller
         return view('shorten', [
             'shortURL' => $shortURL,
 
-        ]);
+        ]); 
 
 
     }
