@@ -10,6 +10,7 @@
     <h1>
         Paste your URL here
     </h1>
+        <h4><i>Make sure to include "http://" or "https://"</i> </h4>
     <form action="/shorten" method="POST">
         <input name="url" type="text" placeholder="https://www.example.com" size="80">
         @csrf
