@@ -6,6 +6,7 @@
 
     <title>URL Shortener</title>
     <link href="/style.css" rel="stylesheet" type="text/css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
 </head>
 
