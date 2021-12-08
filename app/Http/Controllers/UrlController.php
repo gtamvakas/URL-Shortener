@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\Redirect;
 
 class UrlController extends Controller
 {
-    //TODO 1. Test methods
-    //TODO 2. Maybe check if url_id already exists?
-    //TODO 3. CSS -_-
+
+    //TODO Maybe check if url_id already exists?
     public function shortenURL(Request $request){
         $baseURL = '127.0.0.1:8000/';
         $request->validate(['url' => 'required|url']);
