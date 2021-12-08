@@ -2,7 +2,10 @@
 <div id="url-form">
     @if($errors->any())
      <div class="error-msg">
-    <h3> {{ $errors->first() }} </h3>
+    <h3> {{ $errors->first() }} <br><br>
+        The URL needs to be a full URL.
+        E.g. "https://www.example.com"
+    </h3>
      </div>
     @endif
 
