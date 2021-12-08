@@ -12,7 +12,7 @@ class UrlController extends Controller
 
     //TODO Maybe check if url_id already exists?
     public function shortenURL(Request $request){
-        $baseURL = 'https://agile-journey-32942.herokuapp.com/';
+        $baseURL = '127.0.0.1:8000/';
         $request->validate(['url' => 'required|url']);
         $longURL = $request->input('url');
 
@@ -23,13 +23,13 @@ class UrlController extends Controller
         return view('shorten', [
             'shortURL' => $shortURL,
 
-        ]); 
+        ]);
 
 
     }
 
     public function redirectToOriginalURL(Request $request){
-        $baseURL = 'https://agile-journey-32942.herokuapp.com/';
+        $baseURL = '127.0.0.1:8000/';
         $shortURL = $request->url_id;
         $originalURL = Url::where('short_url', $baseURL .  $shortURL)->first();
         if($originalURL == null){
