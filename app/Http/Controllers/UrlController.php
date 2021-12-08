@@ -9,9 +9,12 @@ use Illuminate\Support\Facades\Redirect;
 
 class UrlController extends Controller
 {
-
+    //TODO 1. Test methods
+    //TODO 2. Maybe check if url_id already exists?
+    //TODO 3. CSS -_-
     public function shortenURL(Request $request){
         $baseURL = '127.0.0.1:8000/';
+        $request->validate(['url' => 'required|url']);
         $longURL = $request->input('url');
 
         $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -23,6 +26,7 @@ class UrlController extends Controller
 
         ]);
 
+
     }
 
     public function redirectToOriginalURL(Request $request){
@@ -32,8 +36,9 @@ class UrlController extends Controller
         if($originalURL == null){
             return redirect('/')->withErrors(['msg' => 'URL does not exist!']);
         }
-        return redirect()->away('https://' .$originalURL->long_url);
+        return redirect()->away($originalURL->long_url);
     }
+
 
 
 }
