@@ -10,12 +10,14 @@ use Illuminate\Support\Facades\Redirect;
 class UrlController extends Controller
 {
 
+    //TODO Maybe check if url_id already exists?
     public function shortenURL(Request $request){
-        $baseURL = '127.0.0.1:8000/';
+        $baseURL = 'https://arcane-peak-13940.herokuapp.com/';
+        $request->validate(['url' => 'required|url']);
         $longURL = $request->input('url');
+
         $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $shortURL = $baseURL . substr(str_shuffle($chars), 0, 6);
-
         Url::create(['long_url' => $longURL, 'short_url' => $shortURL]);
 
         return view('shorten', [
@@ -23,15 +25,19 @@ class UrlController extends Controller
 
         ]);
 
+
     }
 
     public function redirectToOriginalURL(Request $request){
-        $baseURL = '127.0.0.1:8000/';
+        $baseURL = 'https://arcane-peak-13940.herokuapp.com/';
         $shortURL = $request->url_id;
         $originalURL = Url::where('short_url', $baseURL .  $shortURL)->first();
-
-       return redirect()->away('http://'.$originalURL->long_url);
+        if($originalURL == null){
+            return redirect('/')->withErrors(['msg' => 'URL does not exist!']);
+        }
+        return redirect()->away($originalURL->long_url);
     }
+
 
 
 }

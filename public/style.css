@@ -1,6 +1,63 @@
-#url-form{
+/*#url-form{*/
+/*    text-align: center;*/
+/*    font-family: sans-serif;*/
+/*}*/
+/*#shortened-url{*/
+/*    text-align: center;*/
+/*    font-family: sans-serif;*/
+/*}*/
+html{
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    font-family: sans-serif;
+
 }
-#shorten-url{
+#shorten-another{
+    font-size: 20px;
+    text-decoration: none;
+
+}
+button, input[type=submit] {
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: large;
+}
+#box{
+    margin-top: 20%;
+
+}
+
+.error-msg{
+    animation: fadeOut 2s forwards;
+    animation-delay: 3s;
+    color: #ff171d;
+    font-family: sans-serif;
+
+}
+#copied-msg{
+    animation: fadeOut 2s forwards;
+    animation-delay: 1.5s;
+    color: #000000;
+    font-family: sans-serif;
+}
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
