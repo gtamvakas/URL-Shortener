@@ -7,7 +7,7 @@ The database that was used is PostgreSQL.
 
 ## Running the application
 
-You can test the application on [Heroku](https://pip.pypa.io/en/stable/) :)
+You can test the application on [Heroku](https://arcane-peak-13940.herokuapp.com/) :)
 
 
 
