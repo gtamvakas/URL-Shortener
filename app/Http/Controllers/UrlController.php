@@ -4,13 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Url;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
+
 
 class UrlController extends Controller
 {
 
-    //TODO Maybe check if url_id already exists?
     public function shortenURL(Request $request){
         $baseURL = asset('/');
         $request->validate(['url' => 'required|url']);
@@ -18,6 +16,10 @@ class UrlController extends Controller
 
         $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $shortURL = $baseURL . substr(str_shuffle($chars), 0, 6);
+
+        while(Url::where('short_url', $shortURL)->exists()){
+            $shortURL = $baseURL . substr(str_shuffle($chars), 0, 6);
+        }
         Url::create(['long_url' => $longURL, 'short_url' => $shortURL]);
 
         return view('shorten', [
