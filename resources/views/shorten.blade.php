@@ -22,7 +22,7 @@
             <button value="Shorten URL" data-clipboard-target="#short-url" onclick="displayMsg()" class="mt-5 p-2 border border-blue-500  bg-blue-500 text-white rounded-md hover:cursor-pointer">
                 Copy URL
             </button>
-            <p id="copied-msg" hidden>Copied!</p><br>
+            <p id="copied-msg" class="text-green-500" hidden>Copied!</p><br><br><br>
             <a href="/" class="pt-5 underline">Shorten another URL</a>
         </div>
     </div>
